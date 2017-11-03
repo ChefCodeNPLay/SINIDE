@@ -1,0 +1,191 @@
+﻿
+@{
+    ViewBag.Title = "Alumnos";
+}
+
+<h2>Alumnos</h2>
+<div class="row">
+    <div class="col-lg-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <i class="fa fa-bar-chart-o fa-fw"></i>Total país
+                <div class="pull-right">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                            Compartir
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu pull-right" role="menu">
+                            <li>
+                                <a href="#">WhatsApp</a>
+                            </li>
+                            <li>
+                                <a href="#">Correo electrónico</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="#">Imprimir</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <div class="row" style="text-align:center">
+                    <img src="~/Content/images/pais2.jpg"  width="600" />
+                </div>
+            </div>
+            <!-- /.panel-body -->
+        </div>
+        <!-- /.panel -->
+    </div>
+    <div class="col-lg-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <i class="fa fa-bar-chart-o fa-fw"></i>Análisis por provincias
+                <div class="pull-right">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                            Compartir
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu pull-right" role="menu">
+                            <li>
+                                <a href="#">WhatsApp</a>
+                            </li>
+                            <li>
+                                <a href="#">Correo electrónico</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="#">Imprimir</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <canvas id="myChart" style="height:425px !important"></canvas>
+                    </div>
+                    <div class="col-lg-6">
+                        <canvas id="myChart2" style="height:425px !important"></canvas>
+                    </div>
+                    <div class="col-lg-12">
+                        <canvas id="myChart3" style="height:423px !important"></canvas>
+                    </div>
+                </div>
+            </div>
+            <!-- /.panel-body -->
+        </div>
+        <!-- /.panel -->
+      
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.min.js"></script>
+<script>
+var ctx = document.getElementById("myChart").getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'pie',
+    data: {
+        labels: ["Buenos Aires", "CABA", "Córdoba", "Santa Fé", "Mendoza", "Jujuy", "Formosa"],
+        datasets: [{
+            backgroundColor: [
+              "#2ecc71",
+              "#3498db",
+              "#95a5a6",
+              "#9b59b6",
+              "#f1c40f",
+              "#e74c3c",
+              "#34495e"
+            ],
+            data: [12, 19, 3, 17, 28, 24, 7]
+        },]
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        title: {
+            display: true,
+            text: 'Asistencias',
+            fontSize: 22
+        },
+        legend: {
+            display: false
+        },
+        radius: 3
+    }
+});
+
+
+var ctx = document.getElementById("myChart2").getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'pie',
+    data: {
+        labels: ["Buenos Aires", "CABA", "Córdoba", "Santa Fé", "Mendoza", "Jujuy", "Formosa"],
+        datasets: [{
+            backgroundColor: [
+              "#2ecc71",
+              "#3498db",
+              "#95a5a6",
+              "#9b59b6",
+              "#f1c40f",
+              "#e74c3c",
+              "#34495e"
+            ],
+            data: [19, 3, 12, 4, 6, 5, 1]
+        }, ]
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        title: {
+            display: true,
+            text: 'Promociones',
+            fontSize: 22
+        },
+        legend: {
+            display: false
+        },
+        radius: 3
+    }
+});
+
+var ctx = document.getElementById("myChart3").getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'pie',
+    data: {
+        labels: ["Buenos Aires", "CABA", "Córdoba", "Santa Fé", "Mendoza", "Jujuy", "Formosa"],
+        datasets: [{
+            backgroundColor: [
+              "#2ecc71",
+              "#3498db",
+              "#95a5a6",
+              "#9b59b6",
+              "#f1c40f",
+              "#e74c3c",
+              "#34495e"
+            ],
+            data: [15, 5, 10, 6, 5, 8, 12]
+        }, ]
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        title: {
+            display: true,
+            text: 'Repitencias',
+            fontSize: 22
+        },
+        legend: {
+            display: false
+        },
+        radius: 3
+    }
+});
+
+</script>
+

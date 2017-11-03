@@ -1,0 +1,73 @@
+﻿@model IEnumerable<SinideV2_0_Sitio.Models.Navbar>
+
+
+<nav class="navbar navbar-default" role="navigation" style="margin-bottom: 0;">
+    <div class="navbar-collapse collapse" style="background-color:white">
+        <div class="col-md-3" style="border:none">
+            <a href="@Url.Action("Index","Home")">
+                <div style="float:left;margin-top: 10px;"><img src="~/Content/images/me_logo.png" /></div>
+                <div style="float:right;margin-top: 20px;"><img src="~/Content/images/diniee_logo.png" width="160" height="60" /></div>
+            </a>
+        </div>
+        <div class="col-md-6" style="border:none; height:96px; text-align:center">
+            <div style="margin-top: 10px;">
+                <a href="@Url.Action("Index","Home")" style="text-decoration:none;">   <font size="20" style="font-family:'Trebuchet MS'">SINIDE 2.0</font></a>
+</div>
+        </div>
+        <div class="col-md-3" style="border:1; height:96px;">
+            <div style="margin-top: 30px; text-align:right">
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Buscar" name="srch-term" id="srch-term">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+         </div>
+     </div>
+    
+    <!-- /.navbar-top-links -->
+    <div class="navbar-default sidebar" role="navigation" style="background-color:white">
+        @*@Html.ActionLink("SINIDE 2.0", "Index", new { controller = "Home" }, new { @class = "navbar-brand" })*@
+        <div class="sidebar-nav navbar-collapse">
+  
+            <ul class="nav" id="side-menu">
+               
+                
+                @foreach (var item in Model)
+                {
+                    if (item.isParent == false && item.parentId == 0)
+                    {
+                        <li><a href="@Url.Action(item.action, item.controller)"><i class="@item.imageClass"></i> @item.nameOption</a></li>
+                    }
+                    else
+                    {
+                        if (item.isParent == true)
+                        {
+                            <li>
+                                <a href="#"><i class="@item.imageClass"></i> @item.nameOption<span class="fa arrow"></span></a>                          
+                                <ul class="nav nav-second-level">
+                                    @foreach (var child in Model.Where(p => p.parentId == item.Id))
+                                    {
+                                        if (child.controller == null)
+                                        {
+                                            <li><a href="#">@child.nameOption</a></li>
+                                        }
+                                        else
+                                        {
+                                        <li><a href="@Url.Action(child.action, child.controller)">@child.nameOption</a></li>
+                                        }
+                                    }
+                                </ul>
+                            </li>
+                        }
+                    }
+                }
+            </ul>
+        </div>
+        <!-- /.sidebar-collapse -->
+    </div>
+    <!-- /.navbar-static-side -->
+</nav>

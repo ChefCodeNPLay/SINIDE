@@ -1,0 +1,186 @@
+﻿
+@{
+    ViewBag.Title = "Instituciones";
+}
+
+<h2>Instituciones</h2>
+<div class="row">
+    <div class="col-lg-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <i class="fa fa-bar-chart-o fa-fw"></i>Total país
+                <div class="pull-right">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                            Compartir
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu pull-right" role="menu">
+                            <li>
+                                <a href="#">WhatsApp</a>
+                            </li>
+                            <li>
+                                <a href="#">Correo electrónico</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="#">Imprimir</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <div class="row" style="text-align:center">
+                    <img src="~/Content/images/pais3.jpg" width="600" />
+                </div>
+            </div>
+            <!-- /.panel-body -->
+        </div>
+        <!-- /.panel -->
+    </div>
+    <div class="col-lg-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <i class="fa fa-bar-chart-o fa-fw"></i>Análisis por provincias
+                <div class="pull-right">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                            Compartir
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu pull-right" role="menu">
+                            <li>
+                                <a href="#">WhatsApp</a>
+                            </li>
+                            <li>
+                                <a href="#">Correo electrónico</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="#">Imprimir</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <canvas id="myChart" style="height:422px !important"></canvas>
+                    </div>
+                    <div class="col-lg-12">
+                        <table class="table">
+                            <thead class="thead-inverse">
+                                <tr>
+                                    <th>#</th>
+                                    <th>Provincia</th>
+                                    <th>Cantidad</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Buenos Aires</td>
+                                    <td>6.541</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>CABA</td>
+                                    <td>2.950</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>Córdoba</td>
+                                    <td>800</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">4</th>
+                                    <td>Santa Fé</td>
+                                    <td>785</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">5</th>
+                                    <td>Mendoza</td>
+                                    <td>690</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">6</th>
+                                    <td>Misiones</td>
+                                    <td>581</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">7</th>
+                                    <td>Chaco</td>
+                                    <td>487</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">8</th>
+                                    <td>Salta</td>
+                                    <td>412</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">9</th>
+                                    <td>San Luis</td>
+                                    <td>351</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">10</th>
+                                    <td>Jujuy</td>
+                                    <td>250</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                      
+                    </div>
+                </div>
+            </div>
+            <!-- /.panel-body -->
+        </div>
+        <!-- /.panel -->
+
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.min.js"></script>
+<script>
+var ctx = document.getElementById("myChart").getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'pie',
+    data: {
+        labels: ["Buenos Aires", "CABA", "Córdoba", "Santa Fé", "Mendoza", "Jujuy", "Formosa"],
+        datasets: [{
+            backgroundColor: [
+              "#2ecc71",
+              "#3498db",
+              "#95a5a6",
+              "#9b59b6",
+              "#f1c40f",
+              "#e74c3c",
+              "#34495e"
+            ],
+            data: [12, 19, 3, 17, 28, 24, 7]
+        },]
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        title: {
+            display: true,
+            text: 'Instituciones',
+            fontSize: 22
+        },
+        legend: {
+            display: false
+        },
+        radius: 3
+    }
+});
+
+
+</script>
+
+
+

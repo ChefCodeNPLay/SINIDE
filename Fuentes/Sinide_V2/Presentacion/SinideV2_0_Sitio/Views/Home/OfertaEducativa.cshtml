@@ -1,0 +1,236 @@
+﻿
+@{
+    ViewBag.Title = "Oferta Educativa";
+}
+
+<h2>Oferta Educativa</h2>
+<div class="row">
+    <div class="col-lg-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <i class="fa fa-bar-chart-o fa-fw"></i>Total país
+                <div class="pull-right">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                            Compartir
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu pull-right" role="menu">
+                            <li>
+                                <a href="#">WhatsApp</a>
+                            </li>
+                            <li>
+                                <a href="#">Correo electrónico</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="#">Imprimir</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <div class="row" style="text-align:center">
+                    <img src="~/Content/images/pais3.jpg" width="600" />
+                </div>
+            </div>
+            <!-- /.panel-body -->
+        </div>
+        <!-- /.panel -->
+    </div>
+    <div class="col-lg-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <i class="fa fa-bar-chart-o fa-fw"></i>Análisis por provincias
+                <div class="pull-right">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                            Compartir
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu pull-right" role="menu">
+                            <li>
+                                <a href="#">WhatsApp</a>
+                            </li>
+                            <li>
+                                <a href="#">Correo electrónico</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="#">Imprimir</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <canvas id="myChart" style="height:350px !important"></canvas>
+                    </div>
+                    <div class="col-lg-12">
+                        <table class="table" style="text-align:center; margin-top:35px;">
+                            <thead class="thead-inverse">
+                                <tr>
+                                    <th>#</th>
+                                    <th style="text-align:center">Provincia</th>
+                                    <th colspan="5" style="text-align:center">Cantidad segun estructura</th>
+                                </tr>
+                                <tr>
+                                    <th></th>
+                                    <th></th>
+                                    <th style="text-align:center">Inicial</th>
+                                    <th style="text-align:center">Primario</th>
+                                    <th style="text-align:center">Secundario</th>
+                                    <th style="text-align:center">Terciario</th>
+                                    <th style="text-align:center">Universitario</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Buenos Aires</td>
+                                    <td>3.541</td>
+                                    <td>6.223</td>
+                                    <td>4.122</td>
+                                    <td>2.951</td>
+                                    <td>34</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>CABA</td>
+                                    <td>2.950</td>
+                                    <td>3.342</td>
+                                    <td>2.981</td>
+                                    <td>541</td>
+                                    <td>2</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>Córdoba</td>
+                                    <td>1.121</td>
+                                    <td>1.541</td>
+                                    <td>1.232</td>
+                                    <td>312</td>
+                                    <td>8</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">4</th>
+                                    <td>Santa Fé</td>
+                                    <td>1.123</td>
+                                    <td>1.343</td>
+                                    <td>1.122</td>
+                                    <td>256</td>
+                                    <td>7</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">5</th>
+                                    <td>Mendoza</td>
+                                    <td>980</td>
+                                    <td>1.541</td>
+                                    <td>1.112</td>
+                                    <td>212</td>
+                                    <td>5</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">6</th>
+                                    <td>Misiones</td>
+                                    <td>840</td>
+                                    <td>860</td>
+                                    <td>982</td>
+                                    <td>180</td>
+                                    <td>3</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">7</th>
+                                    <td>Chaco</td>
+                                    <td>750</td>
+                                    <td>760</td>
+                                    <td>653</td>
+                                    <td>150</td>
+                                    <td>2</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">8</th>
+                                    <td>Salta</td>
+                                    <td>650</td>
+                                    <td>741</td>
+                                    <td>542</td>
+                                    <td>132</td>
+                                    <td>2</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">9</th>
+                                    <td>San Luis</td>
+                                    <td>451</td>
+                                    <td>540</td>
+                                    <td>474</td>
+                                    <td>110</td>
+                                    <td>2</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">10</th>
+                                    <td>Jujuy</td>
+                                    <td>350</td>
+                                    <td>550</td>
+                                    <td>351</td>
+                                    <td>94</td>
+                                    <td>2</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                </div>
+            </div>
+            <!-- /.panel-body -->
+        </div>
+        <!-- /.panel -->
+
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.min.js"></script>
+<script>
+var ctx = document.getElementById("myChart").getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'pie',
+    data: {
+        labels: ["Buenos Aires", "CABA", "Córdoba", "Santa Fé", "Mendoza", "Jujuy", "Formosa"],
+        datasets: [{
+            backgroundColor: [
+              "#2ecc71",
+              "#3498db",
+              "#95a5a6",
+              "#9b59b6",
+              "#f1c40f",
+              "#e74c3c",
+              "#34495e"
+            ],
+            data: [12, 19, 3, 17, 28, 24, 7]
+        },]
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        title: {
+            display: true,
+            text: 'Ofertas educativas',
+            fontSize: 22
+        },
+        legend: {
+            display: false
+        },
+        radius: 3
+    }
+});
+
+
+</script>
+
+
+
+
